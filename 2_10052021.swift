@@ -146,3 +146,48 @@ print(type(of: firstPerson))
 // ==>   print(firstPerson) 
 // so,,
 print(firstPerson ?? "No one is here")
+
+let names2 = [String] = []
+
+// forcing
+let url = URL(string: "https://github.com/peter-h-wi/App-Team-Meetings.git")
+print(type(of: url))
+// if let... and guard let ... else
+
+// if let unwrappedPerson = firstPerson
+if let firstPerson = firstPerson {
+    print(firstPerson)
+} else {
+    print("He is not here")
+}
+
+/* guard
+guard(safe) else {
+    // if not safe
+}
+if safe
+
+*/
+
+
+func printName(name: String?) {
+    
+    // "guard" is something like "if"
+    // anything after the guard is safe.
+    // guard let unwrappedName = name else
+    guard let name = name else {
+        print("The name was optional")
+        return
+    }
+
+    // print(unwrappedName, type(of: unwrappedName))
+    print(name, type(of: name))   
+}
+
+printName(name: nil)
+printName(name: "Roku")
+
+// Optional Chaining
+// When you only need to execute method or access value if value exists, else return nil
+let firstName = names.first
+print(firstName?.uppercased() ?? "No one is present")
