@@ -142,4 +142,7 @@ let firstPerson = names.first
 
 print(type(of: firstPerson))
 
-
+// swift cautious because firstPerson might be null
+// ==>   print(firstPerson) 
+// so,,
+print(firstPerson ?? "No one is here")
